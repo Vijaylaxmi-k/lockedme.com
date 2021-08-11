@@ -1,4 +1,4 @@
-//() {} <> : * +
+//https://github.com/Vijaylaxmi-k/lockedme.com
 package com.lockedMe;
 
 import java.io.File;
@@ -35,7 +35,6 @@ public class LockedMeProject {
 				   		 break;
 			   default : System.out.println("Please enter Valid option");  
 		   }
-			//obj.close();
 		}while(proceed>0);
 		
 	}
@@ -56,7 +55,6 @@ public class LockedMeProject {
 		System.out.println("Enter your choice								       |");
 		System.out.println("****************************************************************************************");
 		ch=Integer.parseInt(obj.nextLine());
-		//obj.close();
 		return ch;
 	}
 	
@@ -101,7 +99,7 @@ public class LockedMeProject {
 			content.add(obj.nextLine());
 		}
 				
-		//save the content into the file
+		//Save the content into the file
 		boolean isSaved= FileManager.createFiles(FILE_HANDLING_DIRECTORY, fileName, content);
 		
 			if(isSaved)
@@ -109,11 +107,6 @@ public class LockedMeProject {
 			else
 				System.out.println("Some error occured. Please contact admin@vijaylaxmi.com");
 				
-			//System.out.println("Enter any character to proceed-");
-			//String data= obj.nextLine();
-			
-			// close Scanner object
-			//obj.close();
 			
 	}
 	
@@ -129,7 +122,7 @@ public class LockedMeProject {
 		System.out.println("Enter file name to be deleted: ");
 		fileName= obj.nextLine();
 		
-		//code for deleting a file by reading file name from user
+		//Code for deleting a file by reading file name from user
 		boolean isDeleted = FileManager.deleteFile(FILE_HANDLING_DIRECTORY, fileName);
 			if(isDeleted)
 				System.out.println("File deleted successfully");
@@ -149,7 +142,7 @@ public class LockedMeProject {
 		System.out.println("Enter file name to be searched: ");
 		fileName= obj.nextLine();
 						
-		//code for searching a file by reading file name from user
+		//Code for searching a file by reading file name from user
 		boolean isFound = FileManager.searchFile(FILE_HANDLING_DIRECTORY, fileName);
 			if(isFound)
 				System.out.println("File Found in specified directory");
