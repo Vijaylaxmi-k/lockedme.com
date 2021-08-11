@@ -42,6 +42,7 @@ public class FileManager
 	{
 		try
 		{
+			////Adding FILE_HANDLING_DIRECTORY with file name and creating file object
 			File fl = new File(FILE_HANDLING_DIRECTORY, fileName);
 			FileWriter fw= new FileWriter(fl);
 			
@@ -66,10 +67,13 @@ public class FileManager
 	 * @param fileName
 	 * @return boolean
 	 */
+	
 	public static boolean deleteFile(String FILE_HANDLING_DIRECTORY, String fileName)
-	{
+	{	
+		//deleting file using name given by user
 		File file = new File(FILE_HANDLING_DIRECTORY+"\\"+fileName);
 		
+		//Checking the condition for file deletion and handling the exception
 		try
 		{
 			if(file.delete())
@@ -83,4 +87,24 @@ public class FileManager
 			   return false;
 		}
 	}
+		
+	/**
+	 * This method will search file in specified directory
+	 * @param FILE_HANDLING_DIRECTORY
+	 * @param fileName
+	 * @return boolean
+	 */
+	
+	public static boolean searchFile(String FILE_HANDLING_DIRECTORY, String fileName)
+	{
+		//adding folder path with file name and creating file object
+		File file= new File(FILE_HANDLING_DIRECTORY+"\\"+fileName);
+		
+		if(file.exists())
+			return true;
+		else
+			return false;
+		
+	}
+	
 }
